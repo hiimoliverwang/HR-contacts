@@ -1,12 +1,25 @@
 angular.module('contacts', [
 ])
-.controller('bookController', function ($scope) {
+.controller('bookController', function ($scope, $http) {
   var contacts = {
     oliver:'42342342',
   };
   $scope.retrieveName = function (){
-    $scope.displayName = $scope.name;
-    $scope.info = contacts[$scope.name]
+    $http({
+      method:'GET',
+      url:'/',
+      data:{name:$scope.name}
+    })
+    .then(function(resp){
+      $scope.displayName = resp.name,
+      $scope.info = resp.number,
+
+    })
+    // $scope.displayName = $scope.name;
+    // $scope.info = contacts[$scope.name]
+
+
+
   }
 
 

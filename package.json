@@ -16,7 +16,8 @@
     "express-partials": "~0.2.0",
     "express-session": "^1.7.2",
     "forever": "^0.10.11",
-    "mongoose": "^4.2.4",
+    "mongo": "^0.1.0",
+    "mongoose": "^4.2.5",
     "request": "^2.34.0"
   }
 }
