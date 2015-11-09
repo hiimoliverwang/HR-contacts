@@ -9,7 +9,14 @@
   "author": "oliver wang",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.3",
-    "mongoose": "^4.2.4"
+    "body-parser": "^1.14.1",
+    "connect": "^3.4.0",
+    "ejs": "^2.3.4",
+    "express": "~4.0.0",
+    "express-partials": "~0.2.0",
+    "express-session": "^1.7.2",
+    "forever": "^0.10.11",
+    "mongoose": "^4.2.4",
+    "request": "^2.34.0"
   }
 }
