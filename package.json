@@ -1,0 +1,15 @@
+{
+  "name": "hr-contacts",
+  "version": "0.0.1",
+  "description": "contacts list for hr students",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "oliver wang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "mongoose": "^4.2.4"
+  }
+}

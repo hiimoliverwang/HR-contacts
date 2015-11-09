@@ -1,0 +1,23 @@
+{
+  "name": "hr-contacts",
+  "authors": [
+    "Oliver Wang <oliverwangmusic@gmail.com>"
+  ],
+  "description": "contacts list for hr students",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7"
+  }
+}
