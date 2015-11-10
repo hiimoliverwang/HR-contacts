@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app='contacts'>
+  <head>
+    <meta charset="utf-8" />
+    <title>HR-Contacts</title>
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="styles/style.css" /> -->
+  </head>
+  <body>
+    
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <nav class="navbar navbar-default" ng-controller = 'navcontroller'>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">HR-Contacts</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li ng-class="{ active: isActive('/home')}"><a href="#/home">Home</a></li>
+            <li ng-class="{ active: isActive('/search')}"><a href='/#/search'>Search</a></li>
+            <li ng-class="{ active: isActive('/addNew')}"><a href='/#/addNew'>New User</a></li>
+            <li><a ng-click = 'signout()' class='logout'>Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    
+    <div ng-view></div>
+    
+
+    <!-- // <script src="bower_components/boostrap/dist/js/bootstrap.js"></script> -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/app.js"></script>
+    <script src="/navcontroller.js"></script>
+
+  </body>
+</html>

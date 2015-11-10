@@ -1,0 +1,33 @@
+<div class = 'container'>
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <h1 class='text-center'>Search for User</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <form name="search" ng-submit='retrieveName()' >
+          <div class='form-group'>
+              <label for="Search">Search First Name</label>
+            <div class="input-group">
+              <span class="input-group-btn">
+                <input type='text' placeholder = 'Search' ng-model='name' class='form-control'>
+                <button type='submit' class="btn btn-primary" type="button">Go!</button>
+              </span>
+            </div>
+          </div>
+        </form>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2"> 
+          <ul ng-show = 'lines' class = 'list-group'>
+            <li ng-repeat = 'line in lines track by line._id' class="list-unstyled text-center">
+              <h3>Name: {{line.first}} {{line.last}} </h3>
+              <h4>Number: {{ line.number }}</h4>
+              <img class="img-responsive" ng-src = '{{line.picUrl}}' alt = 'github pic'/>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

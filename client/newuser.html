@@ -1,0 +1,25 @@
+<div class='container'>
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <h1 class='text-center'>Register New User</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-4 col-md-offset-4"> 
+      <form name="newUser" ng-submit='newName()'>
+        <div class='form-group'>
+          <label for="First Name">First Name</label>
+          <input type='text' placeholder = 'First Name' class='form-control' ng-model='newFirstinput'>
+          <label for="Last Name">Last Name</label>
+          <input type='text' placeholder = 'Last Name' class='form-control' ng-model='newLastinput'>
+          <label for="Phone Number">Phone Number</label>
+          <input type='text' placeholder = 'Number' class='form-control' ng-model='newNumber'>
+          <label for="Github Handle">Github Handle</label>
+          <input type='text' placeholder = 'Github Handle' class='form-control' ng-model='newGH'>
+          <button class="btn btn-primary">Add New User</button>
+          <h3 ng-show = 'added'>New User Added!</h3>
+        </div>
+      </form>
+    </div>
+  </div>  
+</div>

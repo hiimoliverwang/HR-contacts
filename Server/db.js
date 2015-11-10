@@ -1,3 +1,4 @@
+var getProf = require('./githubHelper');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test')
 var mdb = mongoose.connection;
@@ -7,7 +8,23 @@ mdb.once('open', function (callback) {
   // yay!
 });
 exports.Contacts = new mongoose.Schema({
-  name: String,
-  number: String
+  first: String,
+  last: String,
+  number: String,
+  github: String,
+  picUrl: String
 });
+
+
+exports.Contacts.pre('save', function (next) {
+  var user = this;
+  getProf(user.github)
+  .then(function(profile){
+    user.picUrl = profile.avatarUrl
+    console.log(user)
+    next();
+  })
+
+});
+
 exports.mongoose = mongoose;
