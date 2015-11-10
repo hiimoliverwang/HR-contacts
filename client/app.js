@@ -6,22 +6,36 @@ angular.module('contacts', [
   };
   $scope.retrieveName = function (){
     $http({
-      method:'GET',
-      url:'/',
+      method:'POST',
+      url:'/numbers',
+      headers: {
+         'Content-Type': 'application/json'
+      },
       data:{name:$scope.name}
     })
     .then(function(resp){
-      $scope.displayName = resp.name,
-      $scope.info = resp.number,
-
-    })
-    // $scope.displayName = $scope.name;
-    // $scope.info = contacts[$scope.name]
-
-
-
+      console.log(resp)
+      $scope.displayName = resp.data.name;
+      $scope.info = resp.data.number;
+    });
   }
 
+  $scope.newName = function() {
+    $scope.added = false;
+    $http({
+      method:'POST',
+      url:'/newNumber',
+      headers: {
+         'Content-Type': 'application/json'
+      },
+      data:{
+        name:$scope.newNameinput,
+        number:$scope.newNumber
+      }
+    }).then(function(res) {
+      $scope.added = true;
+    })
+  };
 
 });
 

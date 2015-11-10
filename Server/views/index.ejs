@@ -17,6 +17,13 @@
           <button>Search</button>
       </form>
           <h3 ng-show = 'info'>Name: {{displayName}} Number: {{ info }}</h3>
+      <div></div>
+      <form name="newUser" ng-submit='newName()'>
+          <input type='text' ng-model='newNameinput'>
+          <input type='text' ng-model='newNumber'>
+          <button>Add New User</button>
+          <h3 ng-show = 'added'>New User Added!</h3>
+      </form>
     </div>
     
 
