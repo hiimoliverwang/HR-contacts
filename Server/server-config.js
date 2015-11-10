@@ -23,13 +23,9 @@ app.all('/*', function (req , res, next){
 
 
 
-app.post('/numbers',function (req, res){
-  console.log(req.body);
-  contactTable.find({
-    first:req.body.first,
-  })
+app.get('/numbers',function (req, res){
+  contactTable.find({})
   .then(function(result){
-    console.log('search result', result);
     res.send(201, result)
   })
   // res.send(names[req.body.name]);

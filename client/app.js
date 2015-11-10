@@ -1,20 +1,32 @@
-angular.module('contacts', ['ngRoute','navCntrl',
+angular.module('contacts', [
+               'ngRoute',
+               'navCntrl',
+               'contacts.services',
+               'Contacts.profile'
 ])
-.controller('bookController', function ($scope, $http) {
+.controller('contactsControl', function ($scope, $http,currentUser,$location) {
   $scope.retrieveName = function (){
     $http({
-      method:'POST',
+      method:'GET',
       url:'/numbers',
       headers: {
          'Content-Type': 'application/json'
       },
-      data:{first:$scope.name}
     })
     .then(function(resp){
       console.log('server response',resp)
       $scope.lines = resp.data
     });
   }
+  $scope.setUser = function (user) {
+    currentUser.setUser(user);
+    $location.path('/profile');
+  }
+
+
+  $scope.retrieveName();
+})
+.controller('newUserControl', function ($scope, $http) {
 
   $scope.newName = function() {
     $scope.added = false;
@@ -34,22 +46,26 @@ angular.module('contacts', ['ngRoute','navCntrl',
       $scope.added = true;
     })
   };
-
 })
+
 
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
     .when('/addNew', {
       templateUrl: './newuser.html',
-      controller: 'bookController'
+      controller: 'newUserControl'
     })
     .when('/home', {
       templateUrl: './search.html',
-      controller: 'bookController'
+      controller: 'contactsControl'
     })    
     .when('/search', {
       templateUrl: './search.html',
-      controller: 'bookController'
+      controller: 'contactsControl'
+    })    
+    .when('/profile', {
+      templateUrl: './profiles.html',
+      controller: 'profileControl'
     })
     .otherwise({
       redirectTo: '/search'

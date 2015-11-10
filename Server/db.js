@@ -12,7 +12,9 @@ exports.Contacts = new mongoose.Schema({
   last: String,
   number: String,
   github: String,
-  picUrl: String
+  picUrl: String,
+  githubUrl: String,
+  email:String
 });
 
 
@@ -20,7 +22,9 @@ exports.Contacts.pre('save', function (next) {
   var user = this;
   getProf(user.github)
   .then(function(profile){
-    user.picUrl = profile.avatarUrl
+    user.picUrl = profile.avatarUrl;
+    user.githubUrl = profile.githubUrl;
+    user.email = profile.email;
     console.log(user)
     next();
   })

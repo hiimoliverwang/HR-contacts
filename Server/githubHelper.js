@@ -8,7 +8,7 @@ module.exports = function (user) {
   // GET url directly into `request`, we'll pass this options hash, 
   // containing the url and the needed header, instead.
   var options = {
-    url: 'https://api.github.com/users/'+user,
+    url: 'https://api.github.com/users/'+user+"?client_id=a426e3e75a0a40023da9&client_secret=0294f15c4b2a897bf7c35d0d39e1734f75172ec0",
     headers: { 'User-Agent': 'request' },
     json: true  // will JSON.parse(body) for us
   };
@@ -18,6 +18,8 @@ module.exports = function (user) {
       if (err) { return reject(err); }
       
       var simpleProfile = {
+        githubUrl:body.html_url,
+        email:body.email,
         handle: body.login,
         name: body.name,
         avatarUrl: body.avatar_url+'.jpg', // extension necessary for image tagger
