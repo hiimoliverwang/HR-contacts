@@ -9,6 +9,7 @@
   "author": "oliver wang",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.0.5",
     "body-parser": "^1.14.1",
     "connect": "^3.4.0",
@@ -17,8 +18,10 @@
     "express-partials": "~0.2.0",
     "express-session": "^1.7.2",
     "forever": "^0.10.11",
+    "jwt-simple": "^0.3.1",
     "mongo": "^0.1.0",
     "mongoose": "^4.2.5",
+    "q": "^1.4.1",
     "request": "^2.65.0"
   }
 }
