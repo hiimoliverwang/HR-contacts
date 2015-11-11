@@ -12,12 +12,12 @@
     <nav class="navbar navbar-default" ng-controller = 'navcontroller' ng-show = '!isActive("/home")'>
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">HR-Contacts</a>
+          <a class="navbar-brand" href="#/home">HR-Contacts</a>
         </div>
         <div>
           <ul class="nav navbar-nav">
             <li ng-class="{ active: isActive('/home')}"><a href="#/home">Home</a></li>
-            <li ng-class="{ active: isActive('/search')}"><a href='/#/search'>Search</a></li>
+            <li ng-class="{ active: isActive('/search')}"><a href='/#/search'>Contacts</a></li>
             <li ng-class="{ active: isActive('/addNew')}"><a href='/#/addNew'>New User</a></li>
             <li ng-class="{ active: isActive('/login')}"><a href='/#/login'>Login</a></li>
             <li><a ng-click = 'signout()' class='logout'>Logout</a></li>
@@ -38,7 +38,6 @@
     <script src="/profileControl.js"></script>
     <script src="/login.js"></script>
     <script src="/navcontroller.js"></script>
-    <script src="/landing.js"></script>
 
   </body>
 </html>

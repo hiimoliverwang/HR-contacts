@@ -3,8 +3,7 @@ angular.module('contacts', [
                'navCntrl',
                'contacts.services',
                'Contacts.profile',
-               'Contacts.auth',
-               "contacts.landing"
+               'Contacts.auth'
 ])
 .controller('contactsControl', function ($scope, $http,currentUser,$location) {
   $scope.retrieveName = function (){
@@ -28,7 +27,7 @@ angular.module('contacts', [
 
   $scope.retrieveName();
 })
-.controller('newUserControl', function ($scope, $http, $window) {
+.controller('newUserControl', function ($scope, $http, $window, $location) {
 
   $scope.newName = function() {
     $scope.added = false;
@@ -45,7 +44,7 @@ angular.module('contacts', [
       }
     }).then(function(resp) {
       $window.localStorage.setItem('com.contacts', resp.data.token);
-        $location.path('/links');
+        $location.path('/search');
     })
   };
 })
@@ -59,7 +58,6 @@ angular.module('contacts', [
     })
     .when('/home', {
       templateUrl: './landing-page/index.html',
-      controller: 'landingControl'
     })    
     .when('/search', {
       templateUrl: './search.html',
@@ -76,7 +74,7 @@ angular.module('contacts', [
       controller: 'loginControl'
     })
     .otherwise({
-      redirectTo: '/search'
+      redirectTo: '/home'
     })
 
     // Your code here

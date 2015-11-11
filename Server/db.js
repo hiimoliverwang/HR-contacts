@@ -30,7 +30,8 @@ exports.Contacts.pre('save', function (next) {
       this.password = hash;    
       getProf(user.github)
       .then(function(profile){
-        var name = profile.name.split(' ')
+        console.log(profile)
+        var name = profile.name ? profile.name.split(' ') : ['no', 'name']
         user.picUrl = profile.avatarUrl;
         user.githubUrl = profile.githubUrl;
         user.email = profile.email;

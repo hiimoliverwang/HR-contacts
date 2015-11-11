@@ -16,7 +16,7 @@ angular.module('Contacts.auth', [])
     })
     .then(function(resp) {
       $window.localStorage.setItem('com.contacts', resp.data.token);
-        $location.path('/links');
+        $location.path('/search');
     })
   };
 });
